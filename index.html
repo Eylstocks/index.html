@@ -3,30 +3,34 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+<script>document.documentElement.classList.add("js")</script>
 <title>Nugaal Hotel | Garowe</title>
 <meta name="description" content="Clean, comfortable rooms 50 meters from Garowe’s main square. Book on WhatsApp.">
 <style>
-:root{--slate:#27303b;--slate2:#1d242d;--amber:#d9a01e;--bg:#f6f1e7;--card:#fffaf0;--ink:#1f2630;--mute:#5b6470;--line:#ddd3bf;--wa:#25d366;--wa-ink:#0d2b1a;
+:root{--slate:#27303b;--slate2:#1d242d;--amber:#d9a01e;--bg:#f6f1e7;--card:#fffaf0;--ink:#1f2630;--mute:#5b6470;--line:#ddd3bf;--wa:#25d366;--wa-ink:#0d2b1a;--serif:"Playfair Display",Georgia,"Times New Roman",serif;
 box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#171c23;--card:#1f262f;--ink:#f1ece0;--mute:#a6adb7;--line:#343d49}}
-:root[data-theme="dark"]{--bg:#171c23;--card:#1f262f;--ink:#f1ece0;--mute:#a6adb7;--line:#343d49}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#171c23;--card:#1f262f;--ink:#f1ece0;--mute:#a6adb7;--line:#343d49;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#171c23;--card:#1f262f;--ink:#f1ece0;--mute:#a6adb7;--line:#343d49;color-scheme:dark}
 *,*::before,*::after{box-sizing:inherit}
 html{scroll-padding-top:calc(72px + env(safe-area-inset-top,0px));scroll-behavior:smooth}
 body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
-h1,h2,h3{font-family:Georgia,"Times New Roman",serif;font-weight:700;line-height:1.2;margin:0}
+h1,h2,h3{font-family:var(--serif);font-weight:700;line-height:1.2;margin:0}
 a{color:inherit}
 .wrap{max-width:960px;margin:0 auto;padding:0 20px}
 header{position:sticky;top:0;z-index:20;background:var(--slate);color:#fff;padding-top:env(safe-area-inset-top,0px)}
 body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--slate);z-index:21}
 .bar{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:64px}
-.brand{display:inline-flex;align-items:center;gap:10px;font:700 20px Georgia,serif;color:var(--amber);text-decoration:none;letter-spacing:.02em}.brand img{height:40px;width:auto;display:block}
+.brand{display:inline-flex;align-items:center;gap:10px;font:700 20px var(--serif);color:var(--amber);text-decoration:none;letter-spacing:.02em}.brand img{height:40px;width:auto;display:block}
 .btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 22px;border-radius:8px;font-weight:700;font-size:16px;text-decoration:none;border:2px solid transparent;cursor:pointer}
 .btn:focus-visible,a:focus-visible{outline:3px solid var(--amber);outline-offset:2px}
 .wa{background:var(--wa);color:var(--wa-ink)}
 .call{border-color:var(--amber);color:var(--amber)}
 .bar .btn{min-height:44px;padding:0 16px;font-size:15px}
 .bar .call{display:none}
-.hero{position:relative;background:var(--slate2);color:#fff}.hero img{display:block;width:100%;height:min(80vh,660px);min-height:560px;object-fit:cover;object-position:35% 50%}
+.hero{position:relative;background:var(--slate2);color:#fff}.hero img{display:block;width:100%;height:min(80vh,660px);height:min(80svh,660px);min-height:480px;object-fit:cover;object-position:35% 50%}
 .intro{position:absolute;left:0;right:0;bottom:0;padding:110px 0 32px;background:linear-gradient(to top,rgba(18,23,29,.95) 0%,rgba(18,23,29,.82) 50%,rgba(18,23,29,0) 100%)}
 .intro h1{font-size:clamp(28px,6vw,44px);max-width:24ch;text-shadow:0 1px 14px rgba(0,0,0,.45)}
 .intro p{max-width:50ch;color:#e6eaef;margin:14px 0 24px}
@@ -37,18 +41,18 @@ h2{font-size:clamp(26px,5vw,34px);margin-bottom:6px}
 .sub{color:var(--mute);margin:0 0 26px}
 .room{display:grid;gap:14px;padding:22px 0;border-top:1px solid var(--line)}
 .room:last-child{border-bottom:1px solid var(--line)}
-.ph{aspect-ratio:16/9;background:linear-gradient(135deg,var(--slate),var(--slate2));border-radius:6px;display:grid;place-items:center;color:var(--amber);font:15px Georgia,serif;border:1px solid var(--amber)}
+.ph{aspect-ratio:16/9;background:linear-gradient(135deg,var(--slate),var(--slate2));border-radius:6px;display:grid;place-items:center;color:var(--amber);font:15px var(--serif);border:1px solid var(--amber)}
 .room h3{font-size:22px}
-.price{font:700 22px Georgia,serif;color:var(--amber)}
+.price{font:700 22px var(--serif);color:var(--amber)}
 .price small{font:400 15px system-ui,sans-serif;color:var(--mute)}
 .room p{margin:6px 0 14px;color:var(--mute);max-width:52ch}
 .alt{background:var(--card);border-block:1px solid var(--line)}
 dl{margin:0;display:grid;gap:18px}
-dt{font:700 19px Georgia,serif}
+dt{font:700 19px var(--serif)}
 dd{margin:2px 0 0;color:var(--mute);max-width:56ch}
 .why{display:grid;gap:18px}
 .why div{border-left:3px solid var(--amber);padding-left:16px}
-.why b{display:block;font:700 19px Georgia,serif}
+.why b{display:block;font:700 19px var(--serif)}
 .why span{color:var(--mute)}
 .facts{display:grid;gap:14px;margin:0 0 24px;padding:0;list-style:none}
 .facts b{display:block}
@@ -70,6 +74,19 @@ dl{grid-template-columns:1fr 1fr;gap:26px 40px}
 .team p{color:var(--mute);max-width:46ch;margin:8px 0 0}
 .fb{text-align:center}.fb p{color:var(--mute);margin:0 auto 22px;max-width:46ch}
 @media (min-width:700px){.g{grid-template-columns:repeat(4,1fr)}.team{grid-template-columns:1fr 1fr;gap:36px}}
+.brand{white-space:nowrap;font-size:18px}.bar .long{display:none}
+.js .float{transition:opacity .2s,transform .2s}.js .float:not(.show){opacity:0;pointer-events:none;transform:translateY(12px)}
+dialog{border:0;padding:0;border-radius:12px;background:var(--card);color:var(--ink);width:min(92vw,420px);max-height:92vh;overflow:auto}
+dialog::backdrop{background:rgba(10,14,19,.7)}
+#bk-form{padding:22px}#bk-form h2{font-size:24px;margin:0 0 6px}
+.bk-note{color:var(--mute);margin:0 0 16px}
+#bk-form label{display:block;font-weight:700;font-size:15px;margin:14px 0 6px}
+#bk-form input,#bk-form select{width:100%;min-height:48px;padding:0 12px;font:inherit;font-size:16px;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:8px}
+.bk-sum{margin:16px 0;color:var(--mute);min-height:1.6em}.bk-sum.err{color:#c2410c;font-weight:700}
+#bk-form .btn{width:100%}
+.bk-cancel{display:block;width:100%;min-height:44px;margin-top:8px;background:none;border:0;color:var(--mute);font:inherit;cursor:pointer;text-decoration:underline}
+@media (min-width:400px){.brand{font-size:20px}}
+@media (min-width:420px){.bar .long{display:inline}}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 </style>
 </head>
@@ -79,7 +96,7 @@ dl{grid-template-columns:1fr 1fr;gap:26px 40px}
 <a class="brand" href="#top"><img src="images/logo-mark.png" alt="" width="34" height="40">Nugaal Hotel</a>
 <span style="display:flex;gap:10px">
 <a class="btn call" href="tel:+252905777722">Call us</a>
-<a class="btn wa" href="https://wa.me/252905777722?text=Hello%20Nugaal%20Hotel%2C%20I%20would%20like%20to%20ask%20about%20a%20room.">Chat on WhatsApp</a>
+<a class="btn wa" href="https://wa.me/252905777722?text=Hello%20Nugaal%20Hotel%2C%20I%20would%20like%20to%20ask%20about%20a%20room."><span class="long">Chat on </span>WhatsApp</a>
 </span>
 </div>
 </header>
@@ -90,7 +107,7 @@ dl{grid-template-columns:1fr 1fr;gap:26px 40px}
 <h1>Clean, secure rooms in central Garowe, from $20 a night</h1>
 <p>Check in any time, day or night. Free Wi-Fi, a restaurant and coffee shop, and airport pickup. Send us your dates on WhatsApp.</p>
 <div class="cta">
-<a class="btn wa" href="https://wa.me/252905777722?text=Hello%20Nugaal%20Hotel%2C%20I%20would%20like%20to%20book%20a%20room.%20My%20dates%20are%3A%20">Book on WhatsApp</a>
+<a class="btn wa js-book" data-room="" href="https://wa.me/252905777722?text=Hello%20Nugaal%20Hotel%2C%20I%20would%20like%20to%20book%20a%20room.%20My%20dates%20are%3A%20">Choose dates</a>
 <a class="btn call" href="tel:+252905777722">Call us</a>
 </div>
 </div></div></div>
@@ -105,7 +122,7 @@ dl{grid-template-columns:1fr 1fr;gap:26px 40px}
 <h3>Premier Single Room</h3>
 <div class="price">$20 <small>per night</small></div>
 <p>A comfortable room for one guest, designed for business travelers.</p>
-<a class="btn wa" href="https://wa.me/252905777722?text=Hello%20Nugaal%20Hotel%2C%20I%20would%20like%20to%20book%20the%20Premier%20Single%20Room.%20My%20dates%20are%3A%20">Book on WhatsApp</a>
+<a class="btn wa js-book" data-room="Premier Single Room" href="https://wa.me/252905777722?text=Hello%20Nugaal%20Hotel%2C%20I%20would%20like%20to%20book%20the%20Premier%20Single%20Room.%20My%20dates%20are%3A%20">Choose dates</a>
 </div>
 </article>
 
@@ -115,7 +132,7 @@ dl{grid-template-columns:1fr 1fr;gap:26px 40px}
 <h3>Premier Deluxe Twin Room</h3>
 <div class="price">$25 <small>per night</small></div>
 <p>A twin room with two beds, suited to colleagues, friends or family.</p>
-<a class="btn wa" href="https://wa.me/252905777722?text=Hello%20Nugaal%20Hotel%2C%20I%20would%20like%20to%20book%20the%20Premier%20Deluxe%20Twin%20Room.%20My%20dates%20are%3A%20">Book on WhatsApp</a>
+<a class="btn wa js-book" data-room="Premier Deluxe Twin Room" href="https://wa.me/252905777722?text=Hello%20Nugaal%20Hotel%2C%20I%20would%20like%20to%20book%20the%20Premier%20Deluxe%20Twin%20Room.%20My%20dates%20are%3A%20">Choose dates</a>
 </div>
 </article>
 
@@ -125,7 +142,7 @@ dl{grid-template-columns:1fr 1fr;gap:26px 40px}
 <h3>Super Premier Deluxe Room</h3>
 <div class="price">$30 <small>per night</small></div>
 <p>A spacious room for guests who want extra space and comfort.</p>
-<a class="btn wa" href="https://wa.me/252905777722?text=Hello%20Nugaal%20Hotel%2C%20I%20would%20like%20to%20book%20the%20Super%20Premier%20Deluxe%20Room.%20My%20dates%20are%3A%20">Book on WhatsApp</a>
+<a class="btn wa js-book" data-room="Super Premier Deluxe Room" href="https://wa.me/252905777722?text=Hello%20Nugaal%20Hotel%2C%20I%20would%20like%20to%20book%20the%20Super%20Premier%20Deluxe%20Room.%20My%20dates%20are%3A%20">Choose dates</a>
 </div>
 </article>
 </div></section>
@@ -185,7 +202,6 @@ dl{grid-template-columns:1fr 1fr;gap:26px 40px}
 <li><b>Check-in</b>Any time, day or night</li>
 <li><b>Check-out</b>10:30 AM</li>
 <li><b>Reception, WhatsApp and phone</b><a href="tel:+252905777722">+252 905 777 722</a></li>
-<li><b>Email</b><a href="mailto:reception@nugaalhotelgarowe.com">reception@nugaalhotelgarowe.com</a></li>
 </ul>
 <div class="cta">
 <a class="btn wa" href="https://wa.me/252905777722?text=Hello%20Nugaal%20Hotel%2C%20I%20would%20like%20to%20ask%20about%20a%20room.">Chat on WhatsApp</a>
@@ -201,5 +217,52 @@ dl{grid-template-columns:1fr 1fr;gap:26px 40px}
 </footer>
 
 <a class="btn wa float" href="https://wa.me/252905777722?text=Hello%20Nugaal%20Hotel%2C%20I%20would%20like%20to%20ask%20about%20a%20room.">Chat on WhatsApp</a>
+<dialog id="book" aria-labelledby="bk-title">
+<form id="bk-form" novalidate>
+<h2 id="bk-title">Request a room</h2>
+<p class="bk-note">Choose your dates and we will confirm availability on WhatsApp.</p>
+<label for="bk-room">Room</label>
+<select id="bk-room"><option value="">Not sure yet, please advise</option><option>Premier Single Room</option><option>Premier Deluxe Twin Room</option><option>Super Premier Deluxe Room</option></select>
+<label for="bk-in">Check-in date</label>
+<input type="date" id="bk-in">
+<label for="bk-out">Check-out date</label>
+<input type="date" id="bk-out">
+<label for="bk-g">Guests</label>
+<select id="bk-g"><option value="1">1 guest</option><option value="2">2 guests</option><option value="3">3 guests</option><option value="4">4 guests</option><option value="5">5 guests</option><option value="6">6 guests</option><option value="7">7 guests</option><option value="8">8 guests</option></select>
+<p class="bk-sum" id="bk-sum" aria-live="polite">Check-in any time, day or night. Check-out 10:30 AM.</p>
+<button type="submit" class="btn wa">Send on WhatsApp</button>
+<button type="button" class="bk-cancel" id="bk-x">Cancel</button>
+</form>
+</dialog>
+<script>
+(function(){
+var h=document.querySelector(".hero"),f=document.querySelector(".float");
+if(h&&f&&"IntersectionObserver" in window){new IntersectionObserver(function(e){f.classList.toggle("show",!e[0].isIntersecting)}).observe(h)}
+var d=document.getElementById("book");
+if(!d||!d.showModal){return}
+function $(i){return document.getElementById(i)}
+var tz=new Date(Date.now()-new Date().getTimezoneOffset()*6e4).toISOString().slice(0,10);
+function nd(v){var t=new Date(v+"T00:00:00Z");t.setUTCDate(t.getUTCDate()+1);return t.toISOString().slice(0,10)}
+function fm(v){return new Date(v+"T00:00:00Z").toLocaleDateString("en-GB",{weekday:"short",day:"numeric",month:"short",year:"numeric",timeZone:"UTC"})}
+function nn(){return Math.round((Date.parse($("bk-out").value)-Date.parse($("bk-in").value))/864e5)}
+function say(t,err){var s=$("bk-sum");s.textContent=t;s.className="bk-sum"+(err?" err":"")}
+function sum(){var n=nn();if($("bk-in").value&&$("bk-out").value&&n>0){say(n+(n===1?" night":" nights")+". Check-out is 10:30 AM.")}else{say("Check-in any time, day or night. Check-out 10:30 AM.")}}
+$("bk-in").min=tz;$("bk-out").min=nd(tz);
+$("bk-in").addEventListener("change",function(){var v=this.value;if(v){$("bk-out").min=nd(v);if($("bk-out").value&&$("bk-out").value<=v){$("bk-out").value=""}}sum()});
+$("bk-out").addEventListener("change",sum);
+Array.prototype.forEach.call(document.querySelectorAll(".js-book"),function(a){a.addEventListener("click",function(e){e.preventDefault();$("bk-room").value=a.getAttribute("data-room")||"";sum();d.showModal()})});
+$("bk-x").addEventListener("click",function(){d.close()});
+d.addEventListener("click",function(e){if(e.target===d){d.close()}});
+$("bk-form").addEventListener("submit",function(e){
+e.preventDefault();
+var i=$("bk-in").value,o=$("bk-out").value;
+if(!i||!o){say("Please choose both your check-in and check-out dates.",1);return}
+if(nn()<1){say("Check-out must be after check-in.",1);return}
+var r=$("bk-room").value,n=nn();
+var m="Hello Nugaal Hotel, I would like to book "+(r?"the "+r:"a room")+". Check-in: "+fm(i)+". Check-out: "+fm(o)+" ("+n+(n===1?" night":" nights")+"). Guests: "+$("bk-g").value+".";
+window.open("https://wa.me/252905777722?text="+encodeURIComponent(m),"_blank","noopener");
+d.close()});
+})();
+</script>
 </body>
 </html>
