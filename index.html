@@ -10,7 +10,7 @@
 <title>Nugaal Hotel | Garowe</title>
 <meta name="description" content="Clean, comfortable rooms 50 meters from Garowe’s main square. Book on WhatsApp.">
 <style>
-:root{--slate:#27303b;--slate2:#1d242d;--amber:#d9a01e;--bg:#f6f1e7;--card:#fffaf0;--ink:#1f2630;--mute:#5b6470;--line:#ddd3bf;--wa:#25d366;--wa-ink:#0d2b1a;--serif:"Playfair Display",Georgia,"Times New Roman",serif;
+:root{--slate:#27303b;--slate2:#1d242d;--amber:#d9a01e;--bg:#f6f1e7;--card:#fffaf0;--ink:#1f2630;--mute:#5b6470;--line:#ddd3bf;--wa:#d9a01e;--wa-ink:#1d242d;--serif:"Playfair Display",Georgia,"Times New Roman",serif;
 box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#171c23;--card:#1f262f;--ink:#f1ece0;--mute:#a6adb7;--line:#343d49;color-scheme:dark}}
 :root[data-theme="dark"]{--bg:#171c23;--card:#1f262f;--ink:#f1ece0;--mute:#a6adb7;--line:#343d49;color-scheme:dark}
@@ -32,8 +32,8 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .bar .call{display:none}
 .hero{position:relative;background:var(--slate2);color:#fff}.hero img{display:block;width:100%;height:min(80vh,660px);height:min(80svh,660px);min-height:480px;object-fit:cover;object-position:35% 50%}
 .intro{position:absolute;left:0;right:0;bottom:0;padding:110px 0 32px;background:linear-gradient(to top,rgba(18,23,29,.95) 0%,rgba(18,23,29,.82) 50%,rgba(18,23,29,0) 100%)}
-.intro h1{font-size:clamp(28px,6vw,44px);max-width:24ch;text-shadow:0 1px 14px rgba(0,0,0,.45)}
-.intro p{max-width:50ch;color:#e6eaef;margin:14px 0 24px}
+.intro h1{font-size:clamp(24px,7vw,44px);text-shadow:0 1px 14px rgba(0,0,0,.45)}.intro .hl{margin:16px 0 12px;padding-left:14px;border-left:3px solid var(--amber);color:#fff;font-size:17px}.intro .hl strong{display:block;font:700 clamp(28px,8vw,40px)/1.1 var(--serif);color:var(--amber)}
+.intro .lead{max-width:44ch;color:#e6eaef;margin:0 0 22px;font-size:16px}
 .cta{display:flex;flex-wrap:wrap;gap:12px}
 .intro .logo{width:132px;border-radius:6px;display:block;margin-bottom:22px}
 section{padding:52px 0}
@@ -87,6 +87,7 @@ dialog::backdrop{background:rgba(10,14,19,.7)}
 .bk-cancel{display:block;width:100%;min-height:44px;margin-top:8px;background:none;border:0;color:var(--mute);font:inherit;cursor:pointer;text-decoration:underline}
 @media (min-width:400px){.brand{font-size:20px}}
 @media (min-width:420px){.bar .long{display:inline}}
+.wa:hover{background:#e6ad2a}.wa:focus-visible{outline:3px solid #fff;outline-offset:2px;box-shadow:0 0 0 6px #1d242d}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 </style>
 </head>
@@ -104,8 +105,9 @@ dialog::backdrop{background:rgba(10,14,19,.7)}
 <main id="top">
 <div class="hero"><img src="images/hero-exterior-night.jpg" alt="Nugaal Hotel in Garowe, lit up at night">
 <div class="intro"><div class="wrap">
-<h1>Clean, secure rooms in central Garowe, from $20 a night</h1>
-<p>Check in any time, day or night. Free Wi-Fi, a restaurant and coffee shop, and airport pickup. Send us your dates on WhatsApp.</p>
+<h1>Stay comfortably in<br>central Garowe.</h1>
+<p class="hl"><span>Rooms from</span> <strong>$20/night</strong></p>
+<p class="lead">Clean, secure rooms with free Wi-Fi, 24-hour check-in and airport pickup.</p>
 <div class="cta">
 <a class="btn wa js-book" data-room="" href="https://wa.me/252905777722?text=Hello%20Nugaal%20Hotel%2C%20I%20would%20like%20to%20book%20a%20room.%20My%20dates%20are%3A%20">Choose dates</a>
 <a class="btn call" href="tel:+252905777722">Call us</a>
@@ -120,7 +122,7 @@ dialog::backdrop{background:rgba(10,14,19,.7)}
 <img src="images/room-premier-single.jpg" alt="Premier Single Room" width="1000" height="563" loading="lazy">
 <div>
 <h3>Premier Single Room</h3>
-<div class="price">$20 <small>per night</small></div>
+<div class="price">$20<small>/night</small></div>
 <p>A comfortable room for one guest, designed for business travelers.</p>
 <a class="btn wa js-book" data-room="Premier Single Room" href="https://wa.me/252905777722?text=Hello%20Nugaal%20Hotel%2C%20I%20would%20like%20to%20book%20the%20Premier%20Single%20Room.%20My%20dates%20are%3A%20">Choose dates</a>
 </div>
@@ -130,7 +132,7 @@ dialog::backdrop{background:rgba(10,14,19,.7)}
 <img src="images/room-premier-deluxe-twin.jpg" alt="Premier Deluxe Twin Room" width="1000" height="563" loading="lazy">
 <div>
 <h3>Premier Deluxe Twin Room</h3>
-<div class="price">$25 <small>per night</small></div>
+<div class="price">$25<small>/night</small></div>
 <p>A twin room with two beds, suited to colleagues, friends or family.</p>
 <a class="btn wa js-book" data-room="Premier Deluxe Twin Room" href="https://wa.me/252905777722?text=Hello%20Nugaal%20Hotel%2C%20I%20would%20like%20to%20book%20the%20Premier%20Deluxe%20Twin%20Room.%20My%20dates%20are%3A%20">Choose dates</a>
 </div>
@@ -140,7 +142,7 @@ dialog::backdrop{background:rgba(10,14,19,.7)}
 <img src="images/room-super-premier-deluxe.jpg" alt="Super Premier Deluxe Room" width="1000" height="563" loading="lazy">
 <div>
 <h3>Super Premier Deluxe Room</h3>
-<div class="price">$30 <small>per night</small></div>
+<div class="price">$30<small>/night</small></div>
 <p>A spacious room for guests who want extra space and comfort.</p>
 <a class="btn wa js-book" data-room="Super Premier Deluxe Room" href="https://wa.me/252905777722?text=Hello%20Nugaal%20Hotel%2C%20I%20would%20like%20to%20book%20the%20Super%20Premier%20Deluxe%20Room.%20My%20dates%20are%3A%20">Choose dates</a>
 </div>
@@ -199,7 +201,7 @@ dialog::backdrop{background:rgba(10,14,19,.7)}
 <p class="sub">Questions before you arrive? Our reception team is happy to help.</p>
 <ul class="facts">
 <li><b>Address</b>Nugaal Hotel, Garowe, Puntland, Somalia</li>
-<li><b>Check-in</b>Any time, day or night</li>
+<li><b>Check-in</b>24 hours a day</li>
 <li><b>Check-out</b>10:30 AM</li>
 <li><b>Reception, WhatsApp and phone</b><a href="tel:+252905777722">+252 905 777 722</a></li>
 </ul>
@@ -229,7 +231,7 @@ dialog::backdrop{background:rgba(10,14,19,.7)}
 <input type="date" id="bk-out">
 <label for="bk-g">Guests</label>
 <select id="bk-g"><option value="1">1 guest</option><option value="2">2 guests</option><option value="3">3 guests</option><option value="4">4 guests</option><option value="5">5 guests</option><option value="6">6 guests</option><option value="7">7 guests</option><option value="8">8 guests</option></select>
-<p class="bk-sum" id="bk-sum" aria-live="polite">Check-in any time, day or night. Check-out 10:30 AM.</p>
+<p class="bk-sum" id="bk-sum" aria-live="polite">24-hour check-in. Check-out 10:30 AM.</p>
 <button type="submit" class="btn wa">Send on WhatsApp</button>
 <button type="button" class="bk-cancel" id="bk-x">Cancel</button>
 </form>
@@ -246,7 +248,7 @@ function nd(v){var t=new Date(v+"T00:00:00Z");t.setUTCDate(t.getUTCDate()+1);ret
 function fm(v){return new Date(v+"T00:00:00Z").toLocaleDateString("en-GB",{weekday:"short",day:"numeric",month:"short",year:"numeric",timeZone:"UTC"})}
 function nn(){return Math.round((Date.parse($("bk-out").value)-Date.parse($("bk-in").value))/864e5)}
 function say(t,err){var s=$("bk-sum");s.textContent=t;s.className="bk-sum"+(err?" err":"")}
-function sum(){var n=nn();if($("bk-in").value&&$("bk-out").value&&n>0){say(n+(n===1?" night":" nights")+". Check-out is 10:30 AM.")}else{say("Check-in any time, day or night. Check-out 10:30 AM.")}}
+function sum(){var n=nn();if($("bk-in").value&&$("bk-out").value&&n>0){say(n+(n===1?" night":" nights")+". Check-out is 10:30 AM.")}else{say("24-hour check-in. Check-out 10:30 AM.")}}
 $("bk-in").min=tz;$("bk-out").min=nd(tz);
 $("bk-in").addEventListener("change",function(){var v=this.value;if(v){$("bk-out").min=nd(v);if($("bk-out").value&&$("bk-out").value<=v){$("bk-out").value=""}}sum()});
 $("bk-out").addEventListener("change",sum);
