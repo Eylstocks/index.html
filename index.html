@@ -276,7 +276,7 @@ html{scroll-behavior:auto}
 <label for="bk-out">Check-out date</label>
 <input type="date" id="bk-out">
 <label for="bk-g">Guests</label>
-<select id="bk-g"><option value="1">1 guest</option><option value="2">2 guests</option><option value="3">3 guests</option><option value="4">4 guests</option><option value="5">5 guests</option><option value="6">6 guests</option><option value="7">7 guests</option><option value="8">8 guests</option></select>
+<select id="bk-g"><option value="1">1 guest</option><option value="2">2 guests</option><option value="3">3 guests</option><option value="4 or more">4 or more guests</option></select>
 <p class="bk-sum" id="bk-sum" aria-live="polite">Check-in: 24 hours. Check-out: 10:30 AM.</p>
 <button type="submit" class="btn wa">Send on WhatsApp</button>
 <button type="button" class="bk-cancel" id="bk-x">Cancel</button>
@@ -302,10 +302,12 @@ function fm(v){return new Date(v+"T00:00:00Z").toLocaleDateString("en-GB",{weekd
 function nn(){return Math.round((Date.parse($("bk-out").value)-Date.parse($("bk-in").value))/864e5)}
 function say(t,err){var s=$("bk-sum");s.textContent=t;s.className="bk-sum"+(err?" err":"")}
 var base="Check-in: 24 hours. Check-out: 10:30 AM.";
-function sum(){var n=nn();if($("bk-in").value&&$("bk-out").value&&n>0){say(n+(n===1?" night":" nights")+". Check-out: 10:30 AM.")}else{say(base)}}
+var P={"Single Room":20,"Twin Room":25,"Suite":30};
+function sum(){var n=nn();if($("bk-in").value&&$("bk-out").value&&n>0){var r=$("bk-room").value,w=n+(n===1?" night":" nights");if(P[r]){say(w+" × $"+P[r]+" = $"+(n*P[r])+" room total. Check-out: 10:30 AM.")}else{say(w+". Rooms from $20 per night. Check-out: 10:30 AM.")}}else{say(base)}}
 $("bk-in").min=tz;$("bk-out").min=nd(tz);
 $("bk-in").addEventListener("change",function(){var v=this.value;if(v){$("bk-out").min=nd(v);if($("bk-out").value&&$("bk-out").value<=v){$("bk-out").value=""}}sum()});
 $("bk-out").addEventListener("change",sum);
+$("bk-room").addEventListener("change",sum);
 Array.prototype.forEach.call(document.querySelectorAll(".js-book"),function(a){a.addEventListener("click",function(e){e.preventDefault();$("bk-room").value=a.getAttribute("data-room")||"";sum();d.showModal()})});
 $("bk-x").addEventListener("click",function(){d.close()});
 d.addEventListener("click",function(e){if(e.target===d){d.close()}});
@@ -315,7 +317,10 @@ var i=$("bk-in").value,o=$("bk-out").value;
 if(!i||!o){say("Please choose both your check-in and check-out dates.",1);return}
 if(nn()<1){say("Check-out must be after check-in.",1);return}
 var r=$("bk-room").value,n=nn();
-var m="Hello Nugaal Hotel, I would like to book "+(r?"the "+r:"a room")+". Check-in: "+fm(i)+". Check-out: "+fm(o)+" ("+n+(n===1?" night":" nights")+"). Guests: "+$("bk-g").value+".";
+var L=["Hello Nugaal Hotel, I would like to book "+(r?"the "+r:"a room")+".","","Room: "+(r?r+" ($"+P[r]+" per night)":"Not sure yet, please advise"),"Check-in: "+fm(i),"Check-out: "+fm(o)+" ("+n+(n===1?" night":" nights")+")"];
+if(P[r]){L.push("Room total: $"+(n*P[r]))}
+L.push("Guests: "+$("bk-g").value);
+var m=L.join("\n");
 window.open("https://wa.me/252905777722?text="+encodeURIComponent(m),"_blank","noopener");
 d.close()});
 })();
