@@ -31,6 +31,15 @@ if(nx){nx.addEventListener("click",function(){go(cur+1)})}
 each(dots,function(b,k){b.addEventListener("click",function(){go(k)})});
 sl.addEventListener("keydown",function(e){if(e.key==="ArrowLeft"){e.preventDefault();go(cur-1)}else if(e.key==="ArrowRight"){e.preventDefault();go(cur+1)}});
 window.addEventListener("resize",function(){sl.scrollLeft=cur*sl.clientWidth});
+/* Auto-slide every 6 seconds; stops for good once the guest swipes, taps or clicks */
+var hero=sl.parentNode,timer=null,stopped=still,hover=false;
+var tick=function(){if(!stopped&&!hover&&!document.hidden){go(cur+1)}};
+var start=function(){if(!stopped&&!timer){timer=setInterval(tick,6000)}};
+var stop=function(){stopped=true;clearInterval(timer);timer=null};
+each(["pointerdown","touchstart","wheel","keydown"],function(t){hero.addEventListener(t,stop,{passive:true})});
+hero.addEventListener("mouseenter",function(){hover=true});
+hero.addEventListener("mouseleave",function(){hover=false});
+if(document.readyState==="complete"){start()}else{window.addEventListener("load",start)}
 }
 
 /* Gallery photo viewer */
